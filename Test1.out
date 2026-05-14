@@ -1,0 +1,13 @@
+0110
+1111
+01
+YES
+1011 1101 
+Step 1:
+A = x^3 + x + 1
+Step 2:
+B = x^3 + x^2 + 1
+Step 3:
+A + B = x^2 + x
+Question: Is polynomial x^2 + x + 1 irreducible?
+Answer: YES
