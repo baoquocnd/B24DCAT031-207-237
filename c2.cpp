@@ -96,16 +96,13 @@ public:
         return div_mod(*this, other).second;
     }
     
-string to_string_fixed(int len) const {
-    string s = "";
-
-    for(int i = len - 1; i >= 0; --i) {
-        s += ((poly >> i) & 1) ? '1' : '0';
+    string to_string_fixed(int len) const {
+        string s = "";
+        for(int i = len - 1; i >= 0; --i) {
+            s += ((poly >> i) & 1) ? '1' : '0';
+        }
+        return s;
     }
-
-    return s;
-}
-
 
     string to_string() const {
         if(poly == 0) return "0";
@@ -157,41 +154,23 @@ PolynomialGF2 mod_pow(PolynomialGF2 base, uint64_t exp, PolynomialGF2 mod) {
     return res;
 }
 
-
 bool isIrreducible(PolynomialGF2 p) {
     int d = p.degree();
-
-    // degree 0 hoặc polynomial 0/1 không phải bất khả quy
     if(d <= 0) return false;
+    PolynomialGF2 x(2); 
 
-    PolynomialGF2 x(2); // x
-
-    // Ben-Or test:
-    // gcd(p, x^(2^i) - x) = 1 với mọi i = 1..d/2
     for(int i = 1; i <= d / 2; ++i) {
-
         PolynomialGF2 x2i = mod_pow(x, 1ULL << i, p);
-
-        // Trong GF(2): subtraction == addition
         PolynomialGF2 f = x2i + x;
-
         PolynomialGF2 g = gcd(p, f);
-
-        if(g.poly != 1)
-            return false;
+        if(g.poly != 1) return false;
     }
 
-    // Điều kiện đầy đủ:
-    // x^(2^d) mod p phải bằng x
-
     PolynomialGF2 final_check = mod_pow(x, 1ULL << d, p);
-
-    if((final_check + x).poly != 0)
-        return false;
+    if((final_check + x).poly != 0) return false;
 
     return true;
 }
-
 
 void generateIrreducible(int degree) {
     uint64_t start = (1ULL << degree) | 1;
@@ -206,41 +185,90 @@ void generateIrreducible(int degree) {
 }
 
 int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    
-    string type;
-    while(cin >> type) {
-        if(type == "ADD") {
-            string a, b; cin >> a >> b;
-            PolynomialGF2 res = PolynomialGF2(a) + PolynomialGF2(b);
-            int len = max(a.size(), b.size());
-            cout << res.to_string_fixed(len) << "\n";
-        } else if(type == "MUL") {
-            string a, b; cin >> a >> b;
-            (PolynomialGF2(a) * PolynomialGF2(b)).print();
-        } else if(type == "DIV") {
-            string a, b; cin >> a >> b;
-            (PolynomialGF2(a) / PolynomialGF2(b)).print();
-        } else if(type == "MOD") {
-            string a, b; cin >> a >> b;
-            (PolynomialGF2(a) % PolynomialGF2(b)).print();
-        } else if(type == "IRREDUCIBLE") {
-            string a; cin >> a;
-            cout << (isIrreducible(PolynomialGF2(a)) ? "YES" : "NO") << "\n";
-        } else if(type == "GENERATE") {
-            int d; cin >> d;
-            generateIrreducible(d);
-        } else if(type == "BONUS_EXPLAIN_ADD") {
-            string a, b; cin >> a >> b;
+    int choice;
+    while(true) {
+        cout << "\n=========================================\n";
+        cout << "   UNG DUNG DAI SO DA THUC TREN GF(2)    \n";
+        cout << "=========================================\n";
+        cout << "1. Cong hai da thuc\n";
+        cout << "2. Nhan hai da thuc\n";
+        cout << "3. Chia hai da thuc (lay thuong)\n";
+        cout << "4. Chia hai da thuc (lay du - Modulo)\n";
+        cout << "5. Kiem tra da thuc bat kha quy (Irreducible)\n";
+        cout << "6. Liet ke da thuc bat kha quy theo bac\n";
+        cout << "0. Thoat chuong trinh\n";
+        cout << "Nhap lua chon cua ban (0-6): ";
+        if (!(cin >> choice) || choice == 0) break;
+
+        if (choice >= 1 && choice <= 4) {
+            string a, b;
+            cout << "Nhap da thuc A (dang bit): "; cin >> a;
+            cout << "Nhap da thuc B (dang bit): "; cin >> b;
             PolynomialGF2 p1(a), p2(b);
-            cout << "Step 1:\nA = " << p1.to_math_string() << "\n";
-            cout << "Step 2:\nB = " << p2.to_math_string() << "\n";
-            cout << "Step 3:\nA + B = " << (p1 + p2).to_math_string() << "\n";
-        } else if(type == "BONUS_MCQ_IRREDUCIBLE") {
-            string a; cin >> a;
-            cout << "Question: Is polynomial " << PolynomialGF2(a).to_math_string() << " irreducible?\n";
-            cout << "Answer: " << (isIrreducible(PolynomialGF2(a)) ? "YES" : "NO") << "\n";
+            PolynomialGF2 res;
+            string opName, opSymbol;
+
+            if(choice == 1) { res = p1 + p2; opName = "Tong"; opSymbol = " + "; }
+            else if(choice == 2) { res = p1 * p2; opName = "Tich"; opSymbol = " * "; }
+            else if(choice == 3) { res = p1 / p2; opName = "Thuong"; opSymbol = " / "; }
+            else if(choice == 4) { res = p1 % p2; opName = "Phan du"; opSymbol = " % "; }
+
+            cout << "\nChon dinh dang Output:\n";
+            cout << "1. Output chuan ICPC\n";
+            cout << "2. Output Tu luan (BONUS)\n";
+            cout << "3. Output Trac nghiem (BONUS)\n";
+            cout << "Lua chon (1-3): ";
+            int outFormat; cin >> outFormat;
+
+            if (outFormat == 1) {
+                if (choice == 1) {
+                    int len = max(a.size(), b.size());
+                    cout << res.to_string_fixed(len) << "\n";
+                } else {
+                    cout << res.to_string() << "\n";
+                }
+            } else if (outFormat == 2) {
+                cout << "\n[LOI GIAI TU LUAN]\n";
+                cout << "Buoc 1: A = " << p1.to_math_string() << "\n";
+                cout << "Buoc 2: B = " << p2.to_math_string() << "\n";
+                cout << "Buoc 3: A" << opSymbol << "B = " << res.to_math_string() << "\n";
+            } else if (outFormat == 3) {
+                cout << "\n[CAU HOI TRAC NGHIEM]\n";
+                cout << "Cau hoi: " << opName << " cua (" << p1.to_math_string() << ") va (" << p2.to_math_string() << ") la?\n";
+                cout << "Dap an: " << res.to_math_string() << "\n";
+            }
+        } else if (choice == 5) {
+            string a;
+            cout << "Nhap da thuc can kiem tra (dang bit): "; cin >> a;
+            PolynomialGF2 p(a);
+
+            cout << "\nChon dinh dang Output:\n";
+            cout << "1. Output chuan ICPC\n";
+            cout << "2. Output Tu luan (BONUS)\n";
+            cout << "3. Output Trac nghiem (BONUS)\n";
+            cout << "Lua chon (1-3): ";
+            int outFormat; cin >> outFormat;
+
+            bool isIrr = isIrreducible(p);
+            if (outFormat == 1) {
+                cout << (isIrr ? "YES" : "NO") << "\n";
+            } else if (outFormat == 2) {
+                cout << "\n[LOI GIAI TU LUAN]\n";
+                cout << "Da thuc: P(x) = " << p.to_math_string() << "\n";
+                cout << "Kiem tra bang thuat toan Ben-Or (tinh GCD voi cac da thuc x^(2^i) + x tren GF(2))...\n";
+                cout << "Ket luan: P(x) " << (isIrr ? "LA" : "KHONG PHAI") << " da thuc bat kha quy.\n";
+            } else if (outFormat == 3) {
+                cout << "\n[CAU HOI TRAC NGHIEM]\n";
+                cout << "Cau hoi: Da thuc " << p.to_math_string() << " co phai la da thuc bat kha quy khong?\n";
+                cout << "Dap an: " << (isIrr ? "YES" : "NO") << "\n";
+            }
+        } else if (choice == 6) {
+            int d;
+            cout << "Nhap bac cua da thuc: "; cin >> d;
+            cout << "Cac da thuc bat kha quy bac " << d << " tren GF(2) la:\n";
+            generateIrreducible(d);
+        } else {
+            cout << "Lua chon khong hop le!\n";
         }
     }
     return 0;
