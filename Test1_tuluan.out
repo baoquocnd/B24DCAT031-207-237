@@ -1,0 +1,37 @@
+KET QUA CHAY TEST CASE ---
+
+--- [GIAI CHI TIET] PHEP CONG ---
+Buoc 1: Chuyen doi chuoi bit thanh da thuc tren GF(2):
+  A = x^3 + x + 1
+  B = x^3 + x^2 + 1
+Buoc 2: Thuc hien phep toan:
+  Ket qua A + B = x^2 + x
+Buoc 3: Ket qua he Nhi phan: 0110
+
+--- [GIAI CHI TIET] PHEP NHAN ---
+Buoc 1: Chuyen doi chuoi bit thanh da thuc tren GF(2):
+  A = x + 1
+  B = x^2 + 1
+Buoc 2: Thuc hien phep toan:
+  Ket qua A * B = x^3 + x^2 + x + 1
+Buoc 3: Ket qua he Nhi phan: 1111
+
+--- [GIAI CHI TIET] PHEP CHIA LAY DU ---
+Buoc 1: Chuyen doi chuoi bit thanh da thuc tren GF(2):
+  A = x^4 + x + 1
+  B = x + 1
+Buoc 2: Thuc hien phep toan:
+  Ket qua A % B = 1
+Buoc 3: Ket qua he Nhi phan: 1
+
+--- [GIAI CHI TIET] KIEM TRA DA THUC TOI GIAN ---
+Da thuc can kiem tra: f(x) = x^3 + x + 1
+Ap dung thuat toan Ben-Or test tren GF(2)...
+Ket luan: f(x) LA da thuc bat kha quy.
+
+--- [GIAI CHI TIET] SINH DA THUC TOI GIAN BAC 3 ---
+Cac da thuc thoa man (dang nhi phan va toan hoc):
+ + 1011 (x^3 + x + 1)
+ + 1101 (x^3 + x^2 + 1)
+
+------------------------------

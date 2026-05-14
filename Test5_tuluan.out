@@ -1,0 +1,97 @@
+--- KET QUA CHAY TEST CASE ---
+
+--- [GIAI CHI TIET] PHEP CONG ---
+Buoc 1: Chuyen doi chuoi bit thanh da thuc tren GF(2):
+  A = 1
+  B = 1
+Buoc 2: Thuc hien phep toan:
+  Ket qua A + B = 0
+Buoc 3: Ket qua he Nhi phan: 0
+
+--- [GIAI CHI TIET] PHEP CONG ---
+Buoc 1: Chuyen doi chuoi bit thanh da thuc tren GF(2):
+  A = 0
+  B = 0
+Buoc 2: Thuc hien phep toan:
+  Ket qua A + B = 0
+Buoc 3: Ket qua he Nhi phan: 0
+
+--- [GIAI CHI TIET] PHEP CONG ---
+Buoc 1: Chuyen doi chuoi bit thanh da thuc tren GF(2):
+  A = x^15
+  B = 1
+Buoc 2: Thuc hien phep toan:
+  Ket qua A + B = x^15 + 1
+Buoc 3: Ket qua he Nhi phan: 1000000000000001
+
+--- [GIAI CHI TIET] PHEP NHAN ---
+Buoc 1: Chuyen doi chuoi bit thanh da thuc tren GF(2):
+  A = 1
+  B = 1
+Buoc 2: Thuc hien phep toan:
+  Ket qua A * B = 1
+Buoc 3: Ket qua he Nhi phan: 1
+
+--- [GIAI CHI TIET] PHEP NHAN ---
+Buoc 1: Chuyen doi chuoi bit thanh da thuc tren GF(2):
+  A = 0
+  B = x^6 + x^4 + x^2 + 1
+Buoc 2: Thuc hien phep toan:
+  Ket qua A * B = 0
+Buoc 3: Ket qua he Nhi phan: 0
+
+--- [GIAI CHI TIET] PHEP CHIA LAY THUONG ---
+Buoc 1: Chuyen doi chuoi bit thanh da thuc tren GF(2):
+  A = 1
+  B = 1
+Buoc 2: Thuc hien phep toan:
+  Ket qua A / B = 1
+Buoc 3: Ket qua he Nhi phan: 1
+
+--- [GIAI CHI TIET] PHEP CHIA LAY DU ---
+Buoc 1: Chuyen doi chuoi bit thanh da thuc tren GF(2):
+  A = 1
+  B = 1
+Buoc 2: Thuc hien phep toan:
+  Ket qua A % B = 0
+Buoc 3: Ket qua he Nhi phan: 0
+
+--- [GIAI CHI TIET] KIEM TRA DA THUC TOI GIAN ---
+Da thuc can kiem tra: f(x) = 1
+Ap dung thuat toan Ben-Or test tren GF(2)...
+Ket luan: f(x) KHONG PHAI LA da thuc bat kha quy.
+
+--- [GIAI CHI TIET] KIEM TRA DA THUC TOI GIAN ---
+Da thuc can kiem tra: f(x) = 0
+Ap dung thuat toan Ben-Or test tren GF(2)...
+Ket luan: f(x) KHONG PHAI LA da thuc bat kha quy.
+
+--- [GIAI CHI TIET] KIEM TRA DA THUC TOI GIAN ---
+Da thuc can kiem tra: f(x) = x
+Ap dung thuat toan Ben-Or test tren GF(2)...
+Ket luan: f(x) KHONG PHAI LA da thuc bat kha quy.
+
+--- [GIAI CHI TIET] KIEM TRA DA THUC TOI GIAN ---
+Da thuc can kiem tra: f(x) = x + 1
+Ap dung thuat toan Ben-Or test tren GF(2)...
+Ket luan: f(x) KHONG PHAI LA da thuc bat kha quy.
+
+--- [GIAI CHI TIET] KIEM TRA DA THUC TOI GIAN ---
+Da thuc can kiem tra: f(x) = x^3 + x + 1
+Ap dung thuat toan Ben-Or test tren GF(2)...
+Ket luan: f(x) LA da thuc bat kha quy.
+
+--- [GIAI CHI TIET] SINH DA THUC TOI GIAN BAC 2 ---
+Cac da thuc thoa man (dang nhi phan va toan hoc):
+ + 111 (x^2 + x + 1)
+
+--- [GIAI CHI TIET] SINH DA THUC TOI GIAN BAC 5 ---
+Cac da thuc thoa man (dang nhi phan va toan hoc):
+ + 100101 (x^5 + x^2 + 1)
+ + 101001 (x^5 + x^3 + 1)
+ + 101111 (x^5 + x^3 + x^2 + x + 1)
+ + 110111 (x^5 + x^4 + x^2 + x + 1)
+ + 111011 (x^5 + x^4 + x^3 + x + 1)
+ + 111101 (x^5 + x^4 + x^3 + x^2 + 1)
+
+------------------------------

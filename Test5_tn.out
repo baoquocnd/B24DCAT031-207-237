@@ -1,0 +1,91 @@
+--- KET QUA CHAY TEST CASE ---
+
+Cau 1: Cho 2 da thuc A = 1 va B = 1 tren truong GF(2). Gia tri cua bieu thuc A + B la:
+ A. 1
+ B. 0
+ C. x
+ D. Khong xac dinh
+ => DAP AN DUNG: B
+
+Cau 2: Cho 2 da thuc A = 0 va B = 0 tren truong GF(2). Gia tri cua bieu thuc A + B la:
+ A. 1
+ B. 0
+ C. x
+ D. Khong xac dinh
+ => DAP AN DUNG: B
+
+Cau 3: Cho 2 da thuc A = x^15 va B = 1 tren truong GF(2). Gia tri cua bieu thuc A + B la:
+ A. x^15
+ B. x^15 + 1
+ C. x^15 + x + 1
+ D. Khong xac dinh
+ => DAP AN DUNG: B
+
+Cau 4: Cho 2 da thuc A = 1 va B = 1 tren truong GF(2). Gia tri cua bieu thuc A * B la:
+ A. 0
+ B. 1
+ C. x
+ D. Khong xac dinh
+ => DAP AN DUNG: B
+
+Cau 5: Cho 2 da thuc A = 0 va B = x^6 + x^4 + x^2 + 1 tren truong GF(2). Gia tri cua bieu thuc A * B la:
+ A. 1
+ B. 0
+ C. x^6 + x^4 + x^2 + x + 1
+ D. Khong xac dinh
+ => DAP AN DUNG: B
+
+Cau 6: Cho 2 da thuc A = 1 va B = 1 tren truong GF(2). Gia tri cua bieu thuc A / B la:
+ A. 0
+ B. 1
+ C. x
+ D. Khong xac dinh
+ => DAP AN DUNG: B
+
+Cau 7: Cho 2 da thuc A = 1 va B = 1 tren truong GF(2). Gia tri cua bieu thuc A % B la:
+ A. 1
+ B. 0
+ C. x
+ D. Khong xac dinh
+ => DAP AN DUNG: B
+
+Cau 8: Da thuc 1 co phai la da thuc toi gian (bat kha quy) tren GF(2) khong?
+ A. Co
+ B. Khong
+ => DAP AN DUNG: B
+
+Cau 9: Da thuc 0 co phai la da thuc toi gian (bat kha quy) tren GF(2) khong?
+ A. Co
+ B. Khong
+ => DAP AN DUNG: B
+
+Cau 10: Da thuc x co phai la da thuc toi gian (bat kha quy) tren GF(2) khong?
+ A. Co
+ B. Khong
+ => DAP AN DUNG: B
+
+Cau 11: Da thuc x + 1 co phai la da thuc toi gian (bat kha quy) tren GF(2) khong?
+ A. Co
+ B. Khong
+ => DAP AN DUNG: B
+
+Cau 12: Da thuc x^3 + x + 1 co phai la da thuc toi gian (bat kha quy) tren GF(2) khong?
+ A. Co
+ B. Khong
+ => DAP AN DUNG: A
+
+Cau 13: Chon mot da thuc toi gian bac 2 bat ky trong cac dap an sau:
+ A. x^2
+ B. x^2 + x + 1
+ C. x^2 + x
+ D. Khong co da thuc nao
+ => DAP AN DUNG: B
+
+Cau 14: Chon mot da thuc toi gian bac 5 bat ky trong cac dap an sau:
+ A. x^5
+ B. x^5 + x^2 + 1
+ C. x^5 + x
+ D. Khong co da thuc nao
+ => DAP AN DUNG: B
+
+------------------------------
