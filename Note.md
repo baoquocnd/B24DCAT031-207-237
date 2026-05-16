@@ -20,11 +20,15 @@ Mỗi chuỗi bit nhị phân được hiểu là các hệ số của một đa
 Chương trình hoạt động theo 2 bước chính:
 
 ### Bước 1: Chọn chế độ hiển thị
-* **1. DAPAN (Đáp án):** Chương trình chỉ xuất ra kết quả cuối cùng ở dạng chuỗi bit. Phù hợp để chấm điểm tự động hoặc tra cứu nhanh.
+* **1. DAPAN (Đáp án):** Chương trình chỉ xuất ra kết quả cuối cùng ở dạng chuỗi bit (hoặc YES/NO). Phù hợp để chấm điểm tự động hoặc tra cứu nhanh.
 * **2. BTTL (Bài tập tự luận):** Chương trình hiển thị chi tiết từng bước giải:
   * Chuyển đổi từ chuỗi bit sang dạng đa thức toán học.
   * Hiển thị phép toán và kết quả dạng đa thức.
   * Kết luận ngược lại ra chuỗi bit.
+* **3. TRACNGHIEM (Trắc nghiệm):** Chương trình tự động sinh câu hỏi và đáp án:
+  * Định dạng bài toán thành câu hỏi trắc nghiệm khách quan.
+  * Tự động sinh ra 4 đáp án A, B, C, D (bao gồm đáp án đúng và các đáp án gây nhiễu).
+  * Chỉ ra đáp án chính xác, phù hợp để giáo viên lấy dữ liệu tạo đề thi.
 
 ### Bước 2: Chọn hình thức nhập dữ liệu
 * **1. Nhap tu FILE:** Đọc các lệnh tuần tự từ một file văn bản (ví dụ: `input.txt`).
